@@ -1,19 +1,32 @@
-import { fonts } from '@/assets/fonts/font';
-import { colors } from '@/contants/Colors';
-import { styled, withExpoSnack } from 'nativewind';
-import { useState } from 'react';
+// react-native
 import { Image, StyleSheet, Text, View } from 'react-native';
+// react
+import { useState } from 'react';
+// nativewind
+import { styled } from 'nativewind';
+// constants
+import { colors } from '@/contants/Colors';
+// fonts
+import { fonts } from '@/assets/fonts/font';
+// dropdown
 import { Dropdown } from 'react-native-element-dropdown';
 
 const StyledView = styled(View);
 
-interface IntegrationObj {
+export interface IntegrationObj {
     label: string;
     value: string;
 }
 
-function IntegrationType() {
-    const [integration, setIntegration] = useState<IntegrationObj>();
+interface IntegrationTypeProps {
+    integration: IntegrationObj;
+    setIntegration: (integration: IntegrationObj) => void;
+}
+
+function IntegrationType({
+    integration,
+    setIntegration,
+}: IntegrationTypeProps) {
     const [isFocus, setIsFocus] = useState(false);
 
     const options: IntegrationObj[] = [
@@ -23,7 +36,7 @@ function IntegrationType() {
     ];
 
     return (
-        <StyledView className="px-[15px] mb-[20px]">
+        <StyledView className="mb-[20px] mx-[15px] tablet:mx-[25px] flex-1">
             <Text
                 className="text-gray-500 mb-[5px] text-xs"
                 style={fonts.font}>
@@ -42,7 +55,9 @@ function IntegrationType() {
                 valueField="value"
                 value={integration}
                 placeholder="Выберите тип контента"
-                onChange={(item) => setIntegration(item)}
+                onChange={(item) => {
+                    setIntegration(item);
+                }}
                 onFocus={() => setIsFocus(true)}
                 onBlur={() => setIsFocus(false)}
                 renderLeftIcon={() => {
@@ -101,4 +116,5 @@ const styles = StyleSheet.create({
     },
 });
 
-export default withExpoSnack(IntegrationType);
+// export default withExpoSnack(IntegrationType);
+export default IntegrationType;

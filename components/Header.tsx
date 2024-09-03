@@ -1,20 +1,30 @@
-import { Text, View } from 'react-native';
-import { styled, withExpoSnack } from 'nativewind';
+// react-native
+import { Image, Text, TouchableHighlight, View } from 'react-native';
+// nativewind
+import { styled } from 'nativewind';
+// fonts
 import { fonts } from '@/assets/fonts/font';
 
 const StyledView = styled(View);
 
-function Header() {
+interface HeaderProps {
+    setModal: (modal: boolean) => void;
+}
+
+export default function Header({ setModal }: HeaderProps) {
     return (
-        <StyledView className="h-[55px] flex flex-row justify-between px-[15px] items-center">
+        <StyledView className="h-[55px] flex flex-row justify-between px-[15px] items-center border-b-substrate tablet:mx-[25px]">
             <Text
                 className="font-medium text-lg"
                 style={fonts.font}>
                 HDRT Corporation
             </Text>
-            <Text className="text-gray-500 text-xl">x</Text>
+            <TouchableHighlight onPress={() => setModal(false)}>
+                <Image
+                    resizeMode="contain"
+                    source={require('../assets/icons/close.svg')}
+                />
+            </TouchableHighlight>
         </StyledView>
     );
 }
-
-export default withExpoSnack(Header);

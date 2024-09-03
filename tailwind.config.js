@@ -11,6 +11,11 @@ module.exports = {
                 main_blue: '#006DF0',
             },
         },
+        screens: {
+            mb: '375px',
+            tablet: '700px',
+            laptop: '1200px',
+        },
     },
     plugins: [],
 };

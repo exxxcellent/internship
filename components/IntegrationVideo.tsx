@@ -1,4 +1,4 @@
-import { styled, useTailwind } from 'nativewind';
+import { styled } from 'nativewind';
 import { Image, Text, View } from 'react-native';
 
 const StyledView = styled(View);

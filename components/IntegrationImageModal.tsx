@@ -107,8 +107,13 @@ export default function IntegrationImageModal({
                         {children}
                         <GestureDetector gesture={pan}>
                             <Animated.View
-                                className="absolute w-[150px] h-[150px] border-dashed border-main_blue border-2 bg-[#FFFFFF80]"
-                                style={animatedStyles}></Animated.View>
+                                className="absolute w-[150px] h-[150px] border-dashed border-main_blue border-2 bg-[#FFFFFF80] flex items-center justify-center"
+                                style={animatedStyles}>
+                                <Image
+                                    resizeMode="contain"
+                                    source={require('../assets/icons/screen.svg')}
+                                />
+                            </Animated.View>
                         </GestureDetector>
                     </StyledView>
                 </StyledView>

@@ -8,7 +8,7 @@ import { styled } from 'nativewind';
 import { colors } from '@/contants/Colors';
 // fonts
 import { fonts } from '@/assets/fonts/font';
-// dropdown
+// lib
 import { Dropdown } from 'react-native-element-dropdown';
 
 const StyledView = styled(View);
@@ -23,7 +23,7 @@ interface IntegrationTypeProps {
     setIntegration: (integration: IntegrationObj) => void;
 }
 
-function IntegrationType({
+export default function IntegrationType({
     integration,
     setIntegration,
 }: IntegrationTypeProps) {
@@ -115,6 +115,3 @@ const styles = StyleSheet.create({
         height: 21,
     },
 });
-
-// export default withExpoSnack(IntegrationType);
-export default IntegrationType;

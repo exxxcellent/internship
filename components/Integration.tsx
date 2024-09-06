@@ -1,8 +1,13 @@
+// react-native
+import { View } from 'react-native';
+// nativewind
 import { styled } from 'nativewind';
-import { Text, View } from 'react-native';
-import { IntegrationObj } from './IntegrationType';
+// types
+import { type IntegrationObj } from './IntegrationType';
+// components
 import IntegrationText from './IntegrationText';
 import IntegrationVideo from './IntegrationVideo';
+import IntegrationGraphics from './IntegrationGraphics';
 
 const StyledView = styled(View);
 
@@ -15,14 +20,9 @@ function Integration({ integration }: IntegrationProps) {
         <StyledView className="mb-[20px]">
             {integration.value === 'text' && <IntegrationText />}
             {integration.value === 'video' && <IntegrationVideo />}
-            {integration.value === 'image' && (
-                <Text className="mx-auto text-main_blue">
-                    Графический контент
-                </Text>
-            )}
+            {integration.value === 'image' && <IntegrationGraphics />}
         </StyledView>
     );
 }
 
-// export default withExpoSnack(IntegrationType);
 export default Integration;

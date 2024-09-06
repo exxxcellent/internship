@@ -11,7 +11,7 @@ import { fonts } from '@/assets/fonts/font';
 
 const StyledView = styled(View);
 
-function IntegrationText() {
+export default function IntegrationText() {
     const [selectedText, setSelectedText] = useState('');
 
     return (
@@ -140,5 +140,3 @@ function IntegrationText() {
         </StyledView>
     );
 }
-
-export default IntegrationText;

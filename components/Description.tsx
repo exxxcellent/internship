@@ -1,13 +1,13 @@
 // react-native
 import { Text, View } from 'react-native';
 // nativewind
-import { styled } from 'nativewind';
+import { styled, withExpoSnack } from 'nativewind';
 // fonts
 import { fonts } from '@/assets/fonts/font';
 
 const StyledView = styled(View);
 
-export default function Description() {
+function Description() {
     return (
         <StyledView className="flex flex-col gap-[5px] mb-[20px] tablet:mx-[25px]">
             <Text
@@ -42,3 +42,5 @@ export default function Description() {
         </StyledView>
     );
 }
+
+export default withExpoSnack(Description);

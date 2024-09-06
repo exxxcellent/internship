@@ -16,6 +16,8 @@ import IntegrationType, {
 import IntegrationField from '@/components/IntegrationField';
 import Integration from '@/components/Integration';
 import SendButton from '@/components/SendButton';
+// lib
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const StyledView = styled(View);
 
@@ -28,7 +30,14 @@ export default function HomeScreen() {
     });
 
     return (
-        <ScrollView className="bg-[#EFF2F7]">
+        <GestureHandlerRootView
+            className="bg-[#EFF2F7]"
+            style={{
+                flex: 1,
+                width: '100%',
+                alignItems: 'center',
+                justifyContent: 'center',
+            }}>
             {modal && (
                 <Modal>
                     <ScrollView>
@@ -55,6 +64,6 @@ export default function HomeScreen() {
                     onPress={() => setModal(true)}
                 />
             )}
-        </ScrollView>
+        </GestureHandlerRootView>
     );
 }

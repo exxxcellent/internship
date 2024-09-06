@@ -1,9 +1,23 @@
 // react-native
-import { Image, Modal, Text, TouchableHighlight, View } from 'react-native';
+import {
+    Dimensions,
+    Image,
+    Modal,
+    Text,
+    TouchableHighlight,
+    View,
+} from 'react-native';
+// reanimated
+import Animated, {
+    useAnimatedStyle,
+    useSharedValue,
+} from 'react-native-reanimated';
 // react
 import { type ReactNode } from 'react';
 // nativewind
 import { styled } from 'nativewind';
+// lib
+import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 
 const StyledView = styled(View);
 
@@ -12,12 +26,53 @@ interface IntegrationImageModalProps {
     childrenWithBlur?: ReactNode;
     setModal: (modal: boolean) => void;
 }
+// additional function
+function clamp(val: number, min: number, max: number) {
+    return Math.min(Math.max(val, min), max);
+}
+
+const { width, height } = Dimensions.get('screen');
 
 export default function IntegrationImageModal({
     children,
     childrenWithBlur,
     setModal,
 }: IntegrationImageModalProps) {
+    const translationX = useSharedValue(0);
+    const translationY = useSharedValue(0);
+    const prevTranslationX = useSharedValue(0);
+    const prevTranslationY = useSharedValue(0);
+
+    const animatedStyles = useAnimatedStyle(() => ({
+        transform: [
+            { translateX: translationX.value },
+            { translateY: translationY.value },
+        ],
+    }));
+
+    const pan = Gesture.Pan()
+        .minDistance(1)
+        .onStart(() => {
+            prevTranslationX.value = translationX.value;
+            prevTranslationY.value = translationY.value;
+        })
+        .onUpdate((event) => {
+            const maxTranslateX = width / 3;
+            const maxTranslateY = height / 12;
+
+            translationX.value = clamp(
+                prevTranslationX.value + event.translationX,
+                -maxTranslateX,
+                maxTranslateX
+            );
+            translationY.value = clamp(
+                prevTranslationY.value + event.translationY,
+                -maxTranslateY,
+                maxTranslateY
+            );
+        })
+        .runOnJS(true);
+
     return (
         <Modal>
             {/* background blur image */}
@@ -47,7 +102,16 @@ export default function IntegrationImageModal({
                     </TouchableHighlight>
                 </StyledView>
                 {/* image */}
-                <StyledView>{children}</StyledView>
+                <StyledView>
+                    <StyledView className="items-center justify-center">
+                        {children}
+                        <GestureDetector gesture={pan}>
+                            <Animated.View
+                                className="absolute w-[150px] h-[150px] border-dashed border-main_blue border-2 bg-[#FFFFFF80]"
+                                style={animatedStyles}></Animated.View>
+                        </GestureDetector>
+                    </StyledView>
+                </StyledView>
                 {/* button done */}
                 <TouchableHighlight onPress={() => setModal(false)}>
                     <StyledView className="mx-auto my-6 bg-main_blue px-[50px] py-[12px] rounded-[60px] tablet:mx-[25px] laptop:w-[324px]">

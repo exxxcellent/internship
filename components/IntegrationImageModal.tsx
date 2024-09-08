@@ -25,6 +25,7 @@ interface IntegrationImageModalProps {
     children: ReactNode;
     childrenWithBlur?: ReactNode;
     setModal: (modal: boolean) => void;
+    setIsDone: (done: boolean) => void;
 }
 // additional function
 function clamp(val: number, min: number, max: number) {
@@ -37,6 +38,7 @@ export default function IntegrationImageModal({
     children,
     childrenWithBlur,
     setModal,
+    setIsDone,
 }: IntegrationImageModalProps) {
     const translationX = useSharedValue(0);
     const translationY = useSharedValue(0);
@@ -77,7 +79,7 @@ export default function IntegrationImageModal({
         <Modal>
             {/* background blur image */}
             {childrenWithBlur && (
-                <StyledView className="absolute flex justify-center items-center w-full h-screen scale-[2.5]">
+                <StyledView className="absolute flex justify-center items-center w-full h-screen scale-[2.0]">
                     {childrenWithBlur}
                 </StyledView>
             )}
@@ -118,7 +120,11 @@ export default function IntegrationImageModal({
                     </StyledView>
                 </StyledView>
                 {/* button done */}
-                <TouchableHighlight onPress={() => setModal(false)}>
+                <TouchableHighlight
+                    onPress={() => {
+                        setModal(false);
+                        setIsDone(true);
+                    }}>
                     <StyledView className="mx-auto my-6 bg-main_blue px-[50px] py-[12px] rounded-[60px] tablet:mx-[25px] laptop:w-[324px]">
                         <Text className="text-white font-medium">Готово</Text>
                     </StyledView>

@@ -59,7 +59,8 @@ export default function IntegrationImage({
             {modal && (
                 <IntegrationImageModal
                     setModal={setModal}
-                    childrenWithBlur={childrenWithBlur}>
+                    childrenWithBlur={childrenWithBlur}
+                    setIsDone={setIsDone}>
                     {children}
                 </IntegrationImageModal>
             )}

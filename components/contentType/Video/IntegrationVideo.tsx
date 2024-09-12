@@ -1,16 +1,16 @@
-import { styled } from 'nativewind';
-import { Image, Text, View } from 'react-native';
-
-const StyledView = styled(View);
+// react-native
+import { Image, Text } from 'react-native';
+// constants
+import { StyledView } from '@/contants';
 
 export default function IntegrationVideo() {
     return (
         <StyledView>
-            <Text className="text-gray-500 mb-[5px] text-xs mx-[15px]">
+            <Text className="text-gray-500 mb-[5px] text-xs mx-[15px] font-sf-pro-d">
                 Выделите фрагмент видео с Рекламной Интеграцией:
             </Text>
             <StyledView className="bg-white/50 border-substrate border-2 rounded-[20px] py-[15px]">
-                <Text className="px-[10px] text-sm mb-[10px]">
+                <Text className="px-[10px] text-sm mb-[10px] font-sf-pro-d-m">
                     <Text>
                         <Text className="text-main_blue">Этап 1</Text> из 2:{' '}
                     </Text>
@@ -24,7 +24,7 @@ export default function IntegrationVideo() {
                     {/* video snippet */}
                     <Image
                         resizeMode="contain"
-                        source={require('../assets/images/video-snippet.png')}
+                        source={require('../../../assets/images/video-snippet.png')}
                     />
                     {/* controls */}
                     <StyledView className="absolute left-0 bottom-2 mx-auto w-full px-[15px]">
@@ -40,22 +40,22 @@ export default function IntegrationVideo() {
                         <StyledView className="flex flex-row">
                             <Image
                                 resizeMode="contain"
-                                source={require('../assets/icons/play.svg')}
+                                source={require('../../../assets/icons/play.svg')}
                                 className="mr-[10px]"
                             />
                             <Image
                                 resizeMode="contain"
-                                source={require('../assets/icons/replay.svg')}
+                                source={require('../../../assets/icons/replay.svg')}
                                 className="mr-[10px]"
                             />
                             <Image
                                 resizeMode="contain"
-                                source={require('../assets/icons/forward.svg')}
+                                source={require('../../../assets/icons/forward.svg')}
                                 className="mr-[10px]"
                             />
                             <Image
                                 resizeMode="contain"
-                                source={require('../assets/icons/volume.svg')}
+                                source={require('../../../assets/icons/volume.svg')}
                                 className="mr-[10px]"
                             />
                         </StyledView>
@@ -72,17 +72,19 @@ export default function IntegrationVideo() {
                         <StyledView className="flex flex-row items-center px-[10px] py-[7px] bg-white rounded-[5px]">
                             <Image
                                 resizeMode="contain"
-                                source={require('../assets/icons/return.svg')}
+                                source={require('../../../assets/icons/return.svg')}
                                 className="mr-[5px]"
                             />
-                            <Text className="text-gray-500">Отменить</Text>
+                            <Text className="text-gray-500 font-sf-pro-d">
+                                Отменить
+                            </Text>
                         </StyledView>
                     </StyledView>
                     {/* zoom controls */}
                     <StyledView className="flex flex-row items-center bg-white rounded-[5px] px-[10px] py-[7px]">
                         <Image
                             resizeMode="contain"
-                            source={require('../assets/icons/zoom_out.svg')}
+                            source={require('../../../assets/icons/zoom_out.svg')}
                             className="mr-[10px]"
                         />
                         <StyledView className="flex flex-row items-center mr-[10px]">
@@ -95,7 +97,7 @@ export default function IntegrationVideo() {
                         </StyledView>
                         <Image
                             resizeMode="contain"
-                            source={require('../assets/icons/zoom_in.svg')}
+                            source={require('../../../assets/icons/zoom_in.svg')}
                         />
                     </StyledView>
                 </StyledView>
@@ -105,12 +107,12 @@ export default function IntegrationVideo() {
                     <StyledView className="flex flex-col mr-[20px]">
                         <Image
                             resizeMode="contain"
-                            source={require('../assets/icons/volume_up.svg')}
+                            source={require('../../../assets/icons/volume_up.svg')}
                             className="mb-[10px]"
                         />
                         <Image
                             resizeMode="contain"
-                            source={require('../assets/icons/videocam.svg')}
+                            source={require('../../../assets/icons/videocam.svg')}
                             className="mb-[10px]"
                         />
                     </StyledView>
@@ -144,7 +146,7 @@ export default function IntegrationVideo() {
                             {new Array(40).fill(0).map((item) => (
                                 <Image
                                     resizeMode="contain"
-                                    source={require('../assets/images/video-snippet.png')}
+                                    source={require('../../../assets/images/video-snippet.png')}
                                     className="w-[53px] h-[30px] mr-[-30px]"
                                 />
                             ))}

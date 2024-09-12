@@ -1,15 +1,11 @@
-// react-native
-import { View } from 'react-native';
-// nativewind
-import { styled } from 'nativewind';
 // types
 import { type IntegrationObj } from './IntegrationType';
 // components
-import IntegrationText from './IntegrationText';
-import IntegrationVideo from './IntegrationVideo';
-import IntegrationGraphics from './IntegrationGraphics';
-
-const StyledView = styled(View);
+import IntegrationText from './Text/IntegrationText';
+import IntegrationVideo from './Video/IntegrationVideo';
+import IntegrationGraphics from './Graphics/IntegrationGraphics';
+// constants
+import { StyledView } from '@/contants';
 
 interface IntegrationProps {
     integration: IntegrationObj;

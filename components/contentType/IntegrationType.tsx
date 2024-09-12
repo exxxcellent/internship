@@ -1,17 +1,12 @@
 // react-native
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text } from 'react-native';
 // react
 import { useState } from 'react';
-// nativewind
-import { styled } from 'nativewind';
 // constants
 import { colors } from '@/contants/Colors';
-// fonts
-import { fonts } from '@/assets/fonts/font';
+import { StyledView } from '@/contants';
 // lib
 import { Dropdown } from 'react-native-element-dropdown';
-
-const StyledView = styled(View);
 
 export interface IntegrationObj {
     label: string;
@@ -37,9 +32,7 @@ export default function IntegrationType({
 
     return (
         <StyledView className="mb-[20px] mx-[15px] tablet:mx-[25px] flex-1">
-            <Text
-                className="text-gray-500 mb-[5px] text-xs"
-                style={fonts.font}>
+            <Text className="text-gray-500 mb-[5px] text-xs leading-[14.32px] font-sf-pro-d">
                 Выберите тип контента Рекламной Интеграции:
             </Text>
             <Dropdown
@@ -65,7 +58,7 @@ export default function IntegrationType({
                         return (
                             <Image
                                 resizeMode="contain"
-                                source={require('../assets/icons/text.svg')}
+                                source={require('../../assets/icons/text.svg')}
                                 className="mr-2"
                             />
                         );
@@ -73,7 +66,7 @@ export default function IntegrationType({
                         return (
                             <Image
                                 resizeMode="contain"
-                                source={require('../assets/icons/image.svg')}
+                                source={require('../../assets/icons/image.svg')}
                                 className="mr-2"
                             />
                         );
@@ -81,7 +74,7 @@ export default function IntegrationType({
                         return (
                             <Image
                                 resizeMode="contain"
-                                source={require('../assets/icons/video.svg')}
+                                source={require('../../assets/icons/video.svg')}
                                 className="mr-2"
                             />
                         );

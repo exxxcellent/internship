@@ -1,27 +1,36 @@
 // react-native
-import { Button, Modal, ScrollView, View } from 'react-native';
+import { Button, Modal, ScrollView } from 'react-native';
 // react
 import { useState } from 'react';
-// nativewind
-import { styled } from 'nativewind';
 // components
 import Header from '@/components/Header';
 import Description from '@/components/Description';
 import KeywordsForAdvertising from '@/components/KeywordsForAdvertising';
 import Gallery from '@/components/Gallery';
 import SocialMedia from '@/components/SocialMedia';
+import SendButton from '@/components/SendButton';
 import IntegrationType, {
     type IntegrationObj,
-} from '@/components/IntegrationType';
-import IntegrationField from '@/components/IntegrationField';
-import Integration from '@/components/Integration';
-import SendButton from '@/components/SendButton';
+} from '@/components/contentType/IntegrationType';
+import IntegrationField from '@/components/contentType/IntegrationField';
+import Integration from '@/components/contentType/Integration';
+// contants
+import { StyledView } from '@/contants';
 // lib
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-
-const StyledView = styled(View);
+// expo
+import { useFonts } from 'expo-font';
 
 export default function HomeScreen() {
+    const [loaded, error] = useFonts({
+        'sf-pro-display': require('../assets/fonts/SF-Pro-Display-Regular.otf'),
+        'sf-pro-display-500': require('../assets/fonts/SF-Pro-Display-Medium.otf'),
+        'sf-pro-display-700': require('../assets/fonts/SF-Pro-Display-Semibold.otf'),
+        inter: require('../assets/fonts/Inter-Regular.ttf'),
+        'inter-500': require('../assets/fonts/Inter-Medium.ttf'),
+        'inter-700': require('../assets/fonts/Inter-Bold.ttf'),
+    });
+
     const [modal, setModal] = useState(false);
 
     const [integration, setIntegration] = useState<IntegrationObj>({
@@ -30,16 +39,9 @@ export default function HomeScreen() {
     });
 
     return (
-        <GestureHandlerRootView
-            className="bg-[#EFF2F7]"
-            style={{
-                flex: 1,
-                width: '100%',
-                alignItems: 'center',
-                justifyContent: 'center',
-            }}>
+        <GestureHandlerRootView className="bg-[#EFF2F7] flex-1 w-full items-center justify-center">
             {modal && (
-                <Modal>
+                <Modal className="bg-[#EFF2F7]">
                     <ScrollView>
                         <Header setModal={setModal} />
                         <Description />

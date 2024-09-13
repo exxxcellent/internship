@@ -51,7 +51,7 @@ export default function IntegrationImage({
                     </Text>
                     <Image
                         resizeMode="contain"
-                        source={require('../../../assets/icons/done.svg')}
+                        source={require('../../../assets/icons/done.png')}
                     />
                 </StyledView>
             )}
@@ -66,7 +66,7 @@ export default function IntegrationImage({
                     <StyledView className="flex flex-row items-center ">
                         <Image
                             resizeMode="contain"
-                            source={require('../../../assets/icons/screen.svg')}
+                            source={require('../../../assets/icons/screen.png')}
                         />
                         <Text className="text-main_blue text-xs ml-[10px] font-sf-pro-d">
                             Выделите нужный участок

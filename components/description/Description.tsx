@@ -4,19 +4,8 @@ import { Text } from 'react-native';
 import { withExpoSnack } from 'nativewind';
 // contants
 import { StyledView } from '@/contants';
-// expo
-import { useFonts } from 'expo-font';
 
 function Description() {
-    const [loaded, error] = useFonts({
-        'sf-pro-display': require('../assets/fonts/SF-Pro-Display-Regular.otf'),
-        'sf-pro-display-500': require('../assets/fonts/SF-Pro-Display-Medium.otf'),
-        'sf-pro-display-700': require('../assets/fonts/SF-Pro-Display-Semibold.otf'),
-        inter: require('../assets/fonts/Inter-Regular.ttf'),
-        'inter-500': require('../assets/fonts/Inter-Medium.ttf'),
-        'inter-700': require('../assets/fonts/Inter-Bold.ttf'),
-    });
-
     return (
         <StyledView className="flex flex-col gap-[5px] mb-[20px] tablet:mx-[25px]">
             <Text className="text-gray-500 text-xs leading-[14.32px] px-[15px] font-sf-pro-d">

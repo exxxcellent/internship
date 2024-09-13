@@ -58,7 +58,7 @@ export default function IntegrationType({
                         return (
                             <Image
                                 resizeMode="contain"
-                                source={require('../../assets/icons/text.svg')}
+                                source={require('../../assets/icons/text.png')}
                                 className="mr-2"
                             />
                         );
@@ -66,7 +66,7 @@ export default function IntegrationType({
                         return (
                             <Image
                                 resizeMode="contain"
-                                source={require('../../assets/icons/image.svg')}
+                                source={require('../../assets/icons/image.png')}
                                 className="mr-2"
                             />
                         );
@@ -74,7 +74,7 @@ export default function IntegrationType({
                         return (
                             <Image
                                 resizeMode="contain"
-                                source={require('../../assets/icons/video.svg')}
+                                source={require('../../assets/icons/video.png')}
                                 className="mr-2"
                             />
                         );

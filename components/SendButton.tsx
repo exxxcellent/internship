@@ -13,7 +13,7 @@ export default function SendButton({ setModal }: SendButtonProps) {
             <StyledView className="mx-[15px] my-6 bg-main_blue px-[50px] py-[12px] rounded-[61px] flex flex-row justify-center items-center tablet:mx-[25px] laptop:w-[324px]">
                 <Image
                     resizeMode="contain"
-                    source={require('../assets/icons/scanner.svg')}
+                    source={require('../assets/icons/scanner.png')}
                 />
                 <Text className="text-white font-medium ml-[10px] font-sf-pro-d-m">
                     Отправить на проверку

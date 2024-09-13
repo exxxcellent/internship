@@ -4,10 +4,10 @@ import { Button, Modal, ScrollView } from 'react-native';
 import { useState } from 'react';
 // components
 import Header from '@/components/Header';
-import Description from '@/components/Description';
-import KeywordsForAdvertising from '@/components/KeywordsForAdvertising';
-import Gallery from '@/components/Gallery';
-import SocialMedia from '@/components/SocialMedia';
+import Description from '@/components/description/Description';
+import KeywordsForAdvertising from '@/components/description/KeywordsForAdvertising';
+import Gallery from '@/components/description/Gallery';
+import SocialMedia from '@/components/description/SocialMedia';
 import SendButton from '@/components/SendButton';
 import IntegrationType, {
     type IntegrationObj,
@@ -41,8 +41,8 @@ export default function HomeScreen() {
     return (
         <GestureHandlerRootView className="bg-[#EFF2F7] flex-1 w-full items-center justify-center">
             {modal && (
-                <Modal className="bg-[#EFF2F7]">
-                    <ScrollView>
+                <Modal>
+                    <ScrollView className="bg-[#EFF2F7]">
                         <Header setModal={setModal} />
                         <Description />
                         <KeywordsForAdvertising />

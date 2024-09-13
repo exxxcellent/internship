@@ -106,7 +106,7 @@ export default function IntegrationImageModal({
                         <StyledView className="bg-substrate p-[10px] rounded-[12px] flex items-center justify-center mr-[10px]">
                             <Image
                                 resizeMode="contain"
-                                source={require('../../../assets/icons/download.svg')}
+                                source={require('../../../assets/icons/download.png')}
                             />
                         </StyledView>
                     </TouchableHighlight>
@@ -114,7 +114,7 @@ export default function IntegrationImageModal({
                         <StyledView className="bg-substrate p-[10px] rounded-[12px] flex items-center justify-center">
                             <Image
                                 resizeMode="contain"
-                                source={require('../../../assets/icons/close.svg')}
+                                source={require('../../../assets/icons/close.png')}
                             />
                         </StyledView>
                     </TouchableHighlight>
@@ -141,7 +141,7 @@ export default function IntegrationImageModal({
                             style={animatedStyles}>
                             <Image
                                 resizeMode="contain"
-                                source={require('../../../assets/icons/screen.svg')}
+                                source={require('../../../assets/icons/screen.png')}
                             />
                         </Animated.View>
                     </GestureDetector>

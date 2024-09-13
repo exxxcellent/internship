@@ -19,14 +19,14 @@ export default function IntegrationText() {
                 </Text>
                 <Image
                     resizeMode="contain"
-                    source={require('../../../assets/icons/done.svg')}
+                    source={require('../../../assets/icons/done.png')}
                     className="tablet:hidden"
                 />
             </StyledView>
             <StyledView className="bg-white/50 rounded-[20px] p-[15px] flex flex-col gap-y-[10px] pt-[-10px]">
                 <Image
                     resizeMode="contain"
-                    source={require('../../../assets/icons/done.svg')}
+                    source={require('../../../assets/icons/done.png')}
                     className="hidden tablet:flex absolute top-0 right-4"
                 />
                 <Text className="text-gray-500 font-sf-pro-d">

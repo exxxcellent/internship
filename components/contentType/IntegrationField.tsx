@@ -36,7 +36,7 @@ export default function IntegrationField() {
                     <Image
                         resizeMode="contain"
                         className="w-6 h-6"
-                        source={require('../../assets/icons/done.svg')}
+                        source={require('../../assets/icons/done.png')}
                     />
                 )}
             </StyledView>

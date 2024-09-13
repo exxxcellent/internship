@@ -40,22 +40,22 @@ export default function IntegrationVideo() {
                         <StyledView className="flex flex-row">
                             <Image
                                 resizeMode="contain"
-                                source={require('../../../assets/icons/play.svg')}
+                                source={require('../../../assets/icons/play.png')}
                                 className="mr-[10px]"
                             />
                             <Image
                                 resizeMode="contain"
-                                source={require('../../../assets/icons/replay.svg')}
+                                source={require('../../../assets/icons/replay.png')}
                                 className="mr-[10px]"
                             />
                             <Image
                                 resizeMode="contain"
-                                source={require('../../../assets/icons/forward.svg')}
+                                source={require('../../../assets/icons/forward.png')}
                                 className="mr-[10px]"
                             />
                             <Image
                                 resizeMode="contain"
-                                source={require('../../../assets/icons/volume.svg')}
+                                source={require('../../../assets/icons/volume.png')}
                                 className="mr-[10px]"
                             />
                         </StyledView>
@@ -72,7 +72,7 @@ export default function IntegrationVideo() {
                         <StyledView className="flex flex-row items-center px-[10px] py-[7px] bg-white rounded-[5px]">
                             <Image
                                 resizeMode="contain"
-                                source={require('../../../assets/icons/return.svg')}
+                                source={require('../../../assets/icons/return.png')}
                                 className="mr-[5px]"
                             />
                             <Text className="text-gray-500 font-sf-pro-d">
@@ -84,7 +84,7 @@ export default function IntegrationVideo() {
                     <StyledView className="flex flex-row items-center bg-white rounded-[5px] px-[10px] py-[7px]">
                         <Image
                             resizeMode="contain"
-                            source={require('../../../assets/icons/zoom_out.svg')}
+                            source={require('../../../assets/icons/zoom_out.png')}
                             className="mr-[10px]"
                         />
                         <StyledView className="flex flex-row items-center mr-[10px]">
@@ -97,7 +97,7 @@ export default function IntegrationVideo() {
                         </StyledView>
                         <Image
                             resizeMode="contain"
-                            source={require('../../../assets/icons/zoom_in.svg')}
+                            source={require('../../../assets/icons/zoom_in.png')}
                         />
                     </StyledView>
                 </StyledView>
@@ -107,12 +107,12 @@ export default function IntegrationVideo() {
                     <StyledView className="flex flex-col mr-[20px]">
                         <Image
                             resizeMode="contain"
-                            source={require('../../../assets/icons/volume_up.svg')}
+                            source={require('../../../assets/icons/volume_up.png')}
                             className="mb-[10px]"
                         />
                         <Image
                             resizeMode="contain"
-                            source={require('../../../assets/icons/videocam.svg')}
+                            source={require('../../../assets/icons/videocam.png')}
                             className="mb-[10px]"
                         />
                     </StyledView>
